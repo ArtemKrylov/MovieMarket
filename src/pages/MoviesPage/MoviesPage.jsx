@@ -4,10 +4,11 @@ import { useSearchParams } from 'react-router-dom';
 import SearchForm from 'components/SearchForm';
 import Section from 'components/Section';
 import { tmdb_API } from 'components/App/App';
-import { STATUS_MACHINE } from 'utils';
+import { scrollToTop, STATUS_MACHINE } from 'utils';
 import QueryGallery from 'components/QueryGallery';
 import ReactPaginate from 'react-paginate';
 import { MoviesPageStyled } from './MoviesPage.styled';
+import { toast } from 'react-hot-toast';
 
 export default function MoviesPage() {
   const [querySearchResults, setQuerySearchResults] = useState([]);
@@ -18,7 +19,6 @@ export default function MoviesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query');
   const page = searchParams.get('page') ?? 1;
-  console.log('page: ', page);
 
   //when query changes - do fecthByQuery
   useEffect(() => {
@@ -42,22 +42,34 @@ export default function MoviesPage() {
   }, [query, page, setSearchParams]);
 
   function handleQuery(newQuery) {
-    console.log('searchParams', query, page);
-    setSearchParams({ page, query: newQuery });
+    setSearchParams(prev => {
+      if (prev.get(`query`) === newQuery) {
+        toast.error('The same query! Please try a different one!');
+        return prev;
+      }
+      return { page, query: newQuery };
+    });
   }
 
   function handlePageClick({ selected }) {
     setSearchParams({ query, page: selected + 1 });
+    scrollToTop();
   }
 
   return (
-    <Section className="section--movies">
+    <Section className="section--movies movies">
       <MoviesPageStyled>
         <SearchForm handleQuery={handleQuery} value={query ?? ''} />
 
         {query && (
-          <p className="searchQuery">
+          <p className="movies__searchQuery">
             <b>Search query:</b> {query}
+          </p>
+        )}
+        {page > 1 && (
+          <p className="movies__page">
+            <b>Page: </b>
+            {page}
           </p>
         )}
 

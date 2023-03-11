@@ -11,7 +11,7 @@ export default function Header() {
           <NavLink to={`./`} className="navbar__link">
             Home
           </NavLink>
-          <NavLink to={`./movies`}>Movies</NavLink>
+          <NavLink to={`movies`}>Movies</NavLink>
         </nav>
       </Container>
     </HeaderStyled>

@@ -52,7 +52,8 @@ export const Button = styled.button`
 
 export const Input = styled.input`
   margin-bottom: 15px;
-  padding: 7px;
+  padding: 7px 15px;
+  width: 100%;
 
   border-radius: ${({ theme }) => theme.borderRadius};
 
@@ -67,7 +68,8 @@ export const Input = styled.input`
   }
 
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     box-shadow: ${({ theme }) => theme.shadows.boxDarkHover};
   }
 `;

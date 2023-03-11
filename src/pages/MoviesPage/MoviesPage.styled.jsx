@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const MoviesPageStyled = styled.div`
-  & .searchQuery {
+  & .movies__searchQuery,
+  & .movies__page {
     margin-bottom: 15px;
     text-align: center;
   }

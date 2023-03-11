@@ -42,6 +42,8 @@ const CastListStyled = styled.div`
       width: 100%;
       height: 400px;
       object-fit: cover;
+      background-color: #21d4fd;
+      background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
 
       ${({ theme }) => theme.media.tablet} {
         width: 300px;

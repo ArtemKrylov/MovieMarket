@@ -19,7 +19,7 @@ export default function MovieDetailsPage() {
 
   const { movieId } = useParams();
   const location = useLocation();
-  const backLinkRef = location.state?.from.location ?? './';
+  const backLinkRef = location.state?.from.location ?? '../';
 
   useEffect(() => {
     async function getMovieData() {
@@ -32,9 +32,7 @@ export default function MovieDetailsPage() {
     }
 
     getMovieData();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [movieId]);
 
   return (
     <Section className="section--movie-details movieDetails">
@@ -43,7 +41,13 @@ export default function MovieDetailsPage() {
           <RiArrowGoBackLine />
           <Link
             to={backLinkRef}
-            from={location}
+            state={{
+              from: {
+                location:
+                  location.state?.from.location.state?.from.location ??
+                  location,
+              },
+            }}
             className="movieDetails__backlink"
           >
             Go back
@@ -56,14 +60,14 @@ export default function MovieDetailsPage() {
           <nav className="additional__nav">
             <NavLink
               to={'cast'}
-              from={location}
+              state={{ from: { location } }}
               className="additional__navlink link"
             >
               Cast
             </NavLink>
             <NavLink
               to={'reviews'}
-              from={location}
+              state={{ from: { location } }}
               className="additional__navlink link"
             >
               Revies

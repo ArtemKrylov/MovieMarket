@@ -6,9 +6,9 @@ export default function Loader() {
   return (
     <LoaderStyled>
       <Triangle
-        height="80"
-        width="80"
-        color="#4fa94d"
+        height="100"
+        width="100"
+        color="#ff006e"
         ariaLabel="triangle-loading"
         wrapperStyle={{}}
         wrapperClassName=""
