@@ -18,6 +18,7 @@ export const MoviesPageStyled = styled.div`
       padding: 5px;
       border: 1px solid ${({ theme }) => theme.colors.accent2};
       border-radius: ${({ theme }) => theme.borderRadius};
+      cursor: pointer;
 
       &.disabled {
         position: absolute;
