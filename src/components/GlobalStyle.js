@@ -3,6 +3,7 @@ import 'modern-normalize/modern-normalize.css';
 
 export const GlobalStyle = createGlobalStyle`
   body {
+		max-width: 100vw;
 		margin: 0;
 		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 			'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 }
+
 
 	.visually-hidden {
 		position: absolute;
@@ -23,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	.app {
-		width: 100vw;
+		max-width: 100vw;
 		min-height: 100vh;
 		background-color: #52ACFF;
 		background-image: linear-gradient(180deg, #52ACFF 25%, #FFE32C 100%);
@@ -55,8 +57,10 @@ export const GlobalStyle = createGlobalStyle`
 		list-style: none;
 	}
 
-	a {
+	a, .link {
 		text-decoration: none;
+		color: inherit;
+  
 	}
 
 	button {

@@ -5,6 +5,7 @@ export const theme = Object.freeze({
     darkGrey: '#565656',
     black: '#161616',
     accent: '#ff006e',
+    accent2: '#fb5607',
   },
   media: {
     tablet: `@media screen and (min-width: 768px)`,
