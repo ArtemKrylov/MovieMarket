@@ -1,14 +1,13 @@
+import { lazy } from 'react';
+import { Toaster } from 'react-hot-toast';
+import { Route, Routes } from 'react-router-dom';
+
 import TMDB_API from 'API/TMDB_API';
 import Cast from 'components/Cast';
 import Reviews from 'components/Reviews';
 import SharedLayout from 'components/SharedLayout';
-// import HomePage from 'pages/HomePage';
-// import MovieDetailsPage from 'pages/MovieDetailsPage';
-// import MoviesPage from 'pages/MoviesPage';
-import { lazy } from 'react';
-import { Toaster } from 'react-hot-toast';
-import { Route, Routes } from 'react-router-dom';
 import { GlobalStyle } from '../GlobalStyle';
+import { homepage } from 'constants/homepage';
 
 //Code splitting
 const HomePage = lazy(() => import('pages/HomePage'));
@@ -17,8 +16,6 @@ const MovieDetailsPage = lazy(() => import('pages/MovieDetailsPage'));
 
 //API
 export const tmdb_API = new TMDB_API();
-
-const homepage = 'goit-react-hw-05-movies';
 
 export default function App() {
   return (

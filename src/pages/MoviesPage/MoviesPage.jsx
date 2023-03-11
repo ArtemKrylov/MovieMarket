@@ -18,6 +18,7 @@ export default function MoviesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query');
   const page = searchParams.get('page') ?? 1;
+  console.log('page: ', page);
 
   //when query changes - do fecthByQuery
   useEffect(() => {
@@ -72,6 +73,7 @@ export default function MoviesPage() {
             previousLabel="< previous"
             renderOnZeroPageCount={null}
             className="pagination--movies"
+            forcePage={page - 1}
           />
         )}
       </MoviesPageStyled>

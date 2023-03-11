@@ -19,7 +19,7 @@ export default function MovieDetailsPage() {
 
   const { movieId } = useParams();
   const location = useLocation();
-  const backLinkRef = location.state?.from.location ?? '/';
+  const backLinkRef = location.state?.from.location ?? './';
 
   useEffect(() => {
     async function getMovieData() {

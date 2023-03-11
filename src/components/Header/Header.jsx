@@ -8,10 +8,10 @@ export default function Header() {
     <HeaderStyled className="page-header">
       <Container>
         <nav className="navbar">
-          <NavLink to="/" className="navbar__link">
+          <NavLink to={`./`} className="navbar__link">
             Home
           </NavLink>
-          <NavLink to="/movies">Movies</NavLink>
+          <NavLink to={`./movies`}>Movies</NavLink>
         </nav>
       </Container>
     </HeaderStyled>

@@ -17,7 +17,7 @@ export default function QueryGalleryItem({ data }) {
   return (
     <QueryGalleryItemStyled className="queryGalleryItem">
       <Link
-        to={`/movies/${id}`}
+        to={`./${id}`}
         state={{ from: { location } }}
         className={'queryGalleryItem__link'}
       >

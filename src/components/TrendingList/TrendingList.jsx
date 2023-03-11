@@ -12,7 +12,7 @@ export default function TrendingList({ className, moviesList }) {
       {moviesList.map(({ id, title }) => (
         <li key={id} className="trending__item">
           <Link
-            to={`/movies/${id}`}
+            to={`./movies/${id}`}
             state={{ from: { location } }}
             className="trending__link"
           >
