@@ -61,6 +61,7 @@ const CastListStyled = styled.div`
 
   & .cast__name {
     font-weight: 700;
+    font-family: 'Tourney', cursive;
     color: ${({ theme }) => theme.colors.accent};
   }
 

@@ -8,7 +8,9 @@ const QueryGalleryStyled = styled.div`
     padding: 30px 0;
     text-align: center;
     font-weight: 700;
+    font-size: 24px;
     color: ${({ theme }) => theme.colors.accent};
+    text-shadow: ${({ theme }) => theme.shadows.fontBlack};
   }
 
   & .queryGallery__list {

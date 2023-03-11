@@ -2,7 +2,6 @@ import React from 'react';
 import ReviewsListStyled from './ReviewsList.styled';
 
 export default function ReviewsList({ data }) {
-  console.log('data: ', data);
   return (
     <ReviewsListStyled className="reviews__list">
       {data.map(({ id, author, content }) => (

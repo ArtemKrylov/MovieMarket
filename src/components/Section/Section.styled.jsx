@@ -10,6 +10,7 @@ const SectionStyled = styled(Section)`
 
     text-align: center;
     font-weight: 900;
+    font-family: 'Tourney', cursive;
   }
 
   ${props => props.theme.media.tablet} {

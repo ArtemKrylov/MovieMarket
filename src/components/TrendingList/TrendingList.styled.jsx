@@ -13,6 +13,16 @@ const TrendingListStyled = styled.ul`
       left: -5px;
     }
   }
+
+  & .trending__link {
+    text-shadow: ${({ theme }) => theme.shadows.fontBlack};
+    transition: color ${({ theme }) => theme.cubic};
+
+    &:hover,
+    &:focus {
+      color: ${({ theme }) => theme.colors.accent};
+    }
+  }
 `;
 
 export default TrendingListStyled;

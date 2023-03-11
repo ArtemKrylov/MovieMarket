@@ -5,11 +5,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
 		max-width: 100vw;
 		margin: 0;
-		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-			'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-			sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
+		color: ${({ theme }) => theme.colors.black};
+		font-family: 'Shantell Sans', cursive;
 }
 
 
@@ -27,8 +24,9 @@ export const GlobalStyle = createGlobalStyle`
 	.app {
 		max-width: 100vw;
 		min-height: 100vh;
-		background-color: #52ACFF;
-		background-image: linear-gradient(180deg, #52ACFF 25%, #FFE32C 100%);
+		background-color: #4158D0;
+		background-image: linear-gradient(43deg, #ffbe0b 10%, #8347ec 46%, #3a86ff 80%, #4158D0 100%);
+
 
 	}
 

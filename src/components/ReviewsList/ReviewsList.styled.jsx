@@ -6,7 +6,7 @@ const ReviewsListStyled = styled.ul`
   justify-content: center;
   flex-direction: column;
   gap: 20px;
-  padding: 15px 0;
+  padding: 25px 0;
 
   ${({ theme }) => theme.media.tablet} {
   }
@@ -19,6 +19,7 @@ const ReviewsListStyled = styled.ul`
   & .reviews__author {
     margin-bottom: 10px;
     text-align: center;
+    font-family: 'Tourney', cursive;
   }
   & .reviews__content {
     font-size: 18px;

@@ -3,7 +3,7 @@ export const theme = Object.freeze({
     white: '#ffffff',
     grey: `#dddddd`,
     darkGrey: '#565656',
-    black: '#161616',
+    black: '#03071e',
     accent: '#ff006e',
     accent2: '#fb5607',
   },
@@ -12,7 +12,8 @@ export const theme = Object.freeze({
     desktop: `@media screen and (min-width: 1024px)`,
   },
   shadows: {
-    fontBlack: `.1px .1px #161616`,
+    fontBlack: `1px 1px #161616`,
+    fontWhite: `.01px .01px #565656`,
     fontAccent: `1px 1px #ff006e`,
     boxAccent: `0 1px 1px #ff006e, 0 2px 3px #ff004e, 1px 3px 5px #ff005e;`,
     boxDark: `0 1px 1px rgb(0 0 0 / 12%), 0 1px 1px rgb(0 0 0 / 6%), 1px 2px 3px rgb(0 0 0 / 16%);`,

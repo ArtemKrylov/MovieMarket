@@ -31,6 +31,7 @@ const HeaderStyled = styled.header`
     & a {
       color: inherit;
       font-weight: 700;
+      font-family: 'Tourney', cursive;
 
       &.active {
         color: ${({ theme }) => theme.colors.accent};

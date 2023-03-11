@@ -14,8 +14,6 @@ export default function Reviews() {
       const {
         data: { results, total_pages },
       } = await tmdb_API.fetchReviews(id, page);
-      console.log('results: ', results);
-      console.log('total_pages: ', total_pages);
       setReviewsData(results);
       setTotalPages(total_pages);
     }

@@ -7,7 +7,6 @@ import { QueryGalleryItemStyled } from './QueryGalleryItem.styled';
 import { Button } from 'components/App/App.styled';
 
 export default function QueryGalleryItem({ data }) {
-  console.log('data: ', data);
   const [isOverViewShown, setIsOverViewShown] = useState(false);
   const { title, id, overview, vote_average, release_date } = data;
   const location = useLocation();
