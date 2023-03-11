@@ -18,12 +18,14 @@ const MovieDetailsPage = lazy(() => import('pages/MovieDetailsPage'));
 //API
 export const tmdb_API = new TMDB_API();
 
+const homepage = 'goit-react-hw-05-movies';
+
 export default function App() {
   return (
     <div className="app">
       <GlobalStyle />
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
+        <Route path={`${homepage}/`} element={<SharedLayout />}>
           <Route index element={<HomePage />} />
           <Route path="movies" element={<MoviesPage />} />
           <Route path="movies/:movieId" element={<MovieDetailsPage />}>
