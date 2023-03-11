@@ -15,7 +15,7 @@ export const QueryGalleryItemStyled = styled.li`
 
     &:hover,
     &:focus {
-      color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.colors.white};
     }
   }
 

@@ -15,11 +15,13 @@ const ReviewsListStyled = styled.ul`
     padding: 10px;
     border: 1px solid ${({ theme }) => theme.colors.accent};
     border-radius: ${({ theme }) => theme.borderRadius};
+    box-shadow: ${({ theme }) => theme.shadows.boxAccent};
   }
   & .reviews__author {
     margin-bottom: 10px;
     text-align: center;
     font-family: 'Tourney', cursive;
+    text-shadow: ${({ theme }) => theme.shadows.fontAccent};
   }
   & .reviews__content {
     font-size: 18px;

@@ -20,6 +20,7 @@ const CastListStyled = styled.div`
     border: 1px solid ${({ theme }) => theme.colors.accent};
     border-radius: ${({ theme }) => theme.borderRadius};
     overflow: hidden;
+    box-shadow: ${({ theme }) => theme.shadows.boxAccent};
 
     ${({ theme }) => theme.media.tablet} {
       width: 300px;
