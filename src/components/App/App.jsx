@@ -7,7 +7,6 @@ import Cast from 'components/Cast';
 import Reviews from 'components/Reviews';
 import SharedLayout from 'components/SharedLayout';
 import { GlobalStyle } from '../GlobalStyle';
-import { homepage } from 'constants/homepage';
 
 //Code splitting
 const HomePage = lazy(() => import('pages/HomePage'));
@@ -22,7 +21,7 @@ export default function App() {
     <div className="app">
       <GlobalStyle />
       <Routes>
-        <Route path={`${homepage}/`} element={<SharedLayout />}>
+        <Route path={`/`} element={<SharedLayout />}>
           <Route index element={<HomePage />} />
           <Route path="movies" element={<MoviesPage />} />
           <Route path="movies/:movieId" element={<MovieDetailsPage />}>
