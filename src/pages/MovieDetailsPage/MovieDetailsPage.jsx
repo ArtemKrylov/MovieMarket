@@ -19,7 +19,8 @@ export default function MovieDetailsPage() {
 
   const { movieId } = useParams();
   const location = useLocation();
-  const backLinkRef = location.state?.from.location ?? '../';
+  const backLinkRef =
+    location.state?.from?.pathname ?? location.state?.from.location ?? '../';
 
   useEffect(() => {
     async function getMovieData() {
@@ -43,9 +44,9 @@ export default function MovieDetailsPage() {
             to={backLinkRef}
             state={{
               from: {
-                location:
-                  location.state?.from.location.state?.from.location ??
-                  location,
+                // location:
+                //   location?.state?.from.location.state?.from.location ??
+                location,
               },
             }}
             className="movieDetails__backlink"
