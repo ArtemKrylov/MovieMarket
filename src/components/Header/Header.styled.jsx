@@ -46,6 +46,7 @@ const HeaderStyled = styled.header`
     padding-top: 10px;
 
     & .auth-panel__login-icon {
+      cursor: pointer;
       transition: color ${({ theme }) => theme.cubic},
         transform ${({ theme }) => theme.cubic};
       &:hover,
