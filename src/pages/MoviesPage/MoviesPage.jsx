@@ -39,7 +39,8 @@ export default function MoviesPage() {
     }
     if (query === null) return;
     getQuerySearch(query);
-  }, [query, page, setSearchParams]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [query, page]);
 
   function handleQuery(newQuery) {
     setSearchParams(prev => {

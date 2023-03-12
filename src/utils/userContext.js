@@ -24,7 +24,6 @@ export function UserProvider({ children }) {
 
   //when auth modal is opened - add body class body--opened-modal, when closed - remove (to settle body height to 100vh and overflow: hidden)
   useEffect(() => {
-    console.log('isAuthModalOpened: ', isAuthModalOpened);
     if (isAuthModalOpened) {
       document.querySelector('body').classList.add('body--opened-modal');
     }

@@ -18,8 +18,7 @@ export default function HomePage() {
       }
     }
     getTrending();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [trending]);
 
   return (
     <Section title={'Trending today'} className="section--trending">

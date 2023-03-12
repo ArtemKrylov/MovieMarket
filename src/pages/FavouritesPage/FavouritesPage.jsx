@@ -17,7 +17,7 @@ export default function FavouritesPage() {
 
   useEffect(() => {
     getFavouriteMovies().then(setFavourites).catch(console.error);
-  }, [setFavourites, getFavouriteMovies]);
+  }, [getFavouriteMovies]);
 
   return (
     <Section className="section--favourites favourites">
