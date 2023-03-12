@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const FavouritesPageStyled = styled.div`
   & .favourites__list {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     gap: 25px;
