@@ -15,6 +15,7 @@ export const useUser = () => useContext(UserContext);
 
 export function UserProvider({ children }) {
   const [isAuthModalOpened, setIsAuthModalOpened] = useState(false);
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState('User');
   const [userEmail, setUserEmail] = useState(null);
@@ -23,7 +24,13 @@ export function UserProvider({ children }) {
 
   //when auth modal is opened - add body class body--opened-modal, when closed - remove (to settle body height to 100vh and overflow: hidden)
   useEffect(() => {
-    document.querySelector('body').classList.toggle('body--opened-modal');
+    console.log('isAuthModalOpened: ', isAuthModalOpened);
+    if (isAuthModalOpened) {
+      document.querySelector('body').classList.add('body--opened-modal');
+    }
+    if (!isAuthModalOpened) {
+      document.querySelector('body').classList.remove('body--opened-modal');
+    }
   }, [isAuthModalOpened]);
 
   function closeAuthModal() {
