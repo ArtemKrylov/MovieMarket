@@ -6,14 +6,16 @@ import { BrowserRouter } from 'react-router-dom';
 import App from 'components/App';
 import { theme } from './constants/theme';
 import { basename } from 'constants/basename';
-console.log('basename: ', basename);
+import { UserProvider } from 'utils/userContext';
 
 ReactDOM.createRoot(document.querySelector('#root')).render(
   <React.StrictMode>
-    <BrowserRouter basename={basename}>
-      <ThemeProvider theme={theme}>
-        <App />
-      </ThemeProvider>
-    </BrowserRouter>
+    <UserProvider>
+      <BrowserRouter basename={basename}>
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
+      </BrowserRouter>
+    </UserProvider>
   </React.StrictMode>
 );

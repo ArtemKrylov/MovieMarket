@@ -38,6 +38,30 @@ const HeaderStyled = styled.header`
       }
     }
   }
+
+  & .auth-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+
+    & .auth-panel__login-icon {
+      transition: color ${({ theme }) => theme.cubic},
+        transform ${({ theme }) => theme.cubic};
+      &:hover,
+      &:focus {
+        color: ${({ theme }) => theme.colors.accent};
+        transform: translate(0px, 1px);
+      }
+    }
+
+    & .auth-panel__loggedBlock {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+  }
 `;
 
 export default HeaderStyled;

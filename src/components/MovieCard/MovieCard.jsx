@@ -2,12 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MovieCardStyled from './MovieCard.styled';
 import Loader from 'components/Loader/Loader';
+import { Button } from 'components/App/App.styled';
+import { useUser } from 'utils/userContext';
 
 export default function MovieCard({ movieData }) {
-  // if (Object.keys(movieData).length === 0) return;
+  const { isLoggedIn, addMovieToFavourites } = useUser();
 
-  const { poster_path, overview, vote_average, genres, title, release_date } =
-    movieData;
+  const {
+    id,
+    poster_path,
+    overview,
+    vote_average,
+    genres,
+    title,
+    release_date,
+  } = movieData;
+
+  function handleAddToFavouritesBtnClick() {
+    addMovieToFavourites({
+      id,
+      poster_path,
+      title,
+      release_date,
+      vote_average,
+    });
+  }
 
   return (
     <>
@@ -20,12 +39,24 @@ export default function MovieCard({ movieData }) {
             alt={title}
             className="moviecard__image"
           />
+
           <div className="moviecard__info">
             <h4 className="moviecard__title">
               {title}
               <span>({release_date.slice(0, 4)})</span>
             </h4>
             <p className="moviecard__votes">User score: {vote_average}</p>
+
+            {isLoggedIn && (
+              <Button
+                type="button"
+                className="moviecard__addToFavouritesBtn"
+                onClick={handleAddToFavouritesBtnClick}
+              >
+                Add to favourites
+              </Button>
+            )}
+
             <h5 className="moviecard__subtitle">Overview</h5>
             <p className="moviecard__overview">{overview}</p>
             <h5 className="moviecard__subtitle">Genres</h5>

@@ -9,6 +9,11 @@ export const GlobalStyle = createGlobalStyle`
 		font-family: 'Shantell Sans', cursive;
 }
 
+	.body--opened-modal{
+		height: 100vh;
+		overflow: hidden;
+	}
+
 
 	.visually-hidden {
 		position: absolute;

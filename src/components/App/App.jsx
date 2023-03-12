@@ -7,6 +7,9 @@ import Cast from 'components/Cast';
 import Reviews from 'components/Reviews';
 import SharedLayout from 'components/SharedLayout';
 import { GlobalStyle } from '../GlobalStyle';
+import { useUser } from 'utils/userContext';
+import AuthModal from 'components/AuthModal';
+import FavouritesPage from 'pages/FavouritesPage';
 
 //Code splitting
 const HomePage = lazy(() => import('pages/HomePage'));
@@ -17,6 +20,8 @@ const MovieDetailsPage = lazy(() => import('pages/MovieDetailsPage'));
 export const tmdb_API = new TMDB_API();
 
 export default function App() {
+  const { isAuthModalOpened, closeAuthModal } = useUser();
+
   return (
     <div className="app">
       <GlobalStyle />
@@ -28,9 +33,12 @@ export default function App() {
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
+          <Route path="favourites" element={<FavouritesPage />} />
         </Route>
       </Routes>
-
+      {isAuthModalOpened && (
+        <AuthModal className="authModal" closeAuth={closeAuthModal} />
+      )}
       <div>
         <Toaster />
       </div>
