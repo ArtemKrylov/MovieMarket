@@ -39,6 +39,7 @@ export default function MoviesPage() {
     }
     if (query === null) return;
     getQuerySearch(query);
+    // eslint ругається на відсутність залежності setSearchParams, всередину його не перемістити, тільки додати у винятки
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query, page]);
 
