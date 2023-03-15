@@ -8,7 +8,10 @@ export default function ReviewsList({ data }) {
         <li key={id} className="reviews__item">
           <h4 className="reviews__author">Author: {author}</h4>
 
-          <p className="reviews__content">{content}</p>
+          <p
+            className="reviews__content"
+            dangerouslySetInnerHTML={{ __html: content }}
+          ></p>
         </li>
       ))}
     </ReviewsListStyled>

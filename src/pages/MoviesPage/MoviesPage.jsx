@@ -28,9 +28,7 @@ export default function MoviesPage() {
         const response = await tmdb_API.fetchByQuery(query, page);
         const { results, total_pages } = response.data;
         setQuerySearchResults(results);
-        setSearchParams({ query, page });
         setTotalPages(total_pages);
-        // setPages(total_pages);
         setStatus(STATUS_MACHINE.RESOLVED);
       } catch (error) {
         console.error(error);
@@ -39,8 +37,6 @@ export default function MoviesPage() {
     }
     if (query === null) return;
     getQuerySearch(query);
-    // eslint ругається на відсутність залежності setSearchParams, всередину його не перемістити, тільки додати у винятки
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query, page]);
 
   function handleQuery(newQuery) {
@@ -49,7 +45,7 @@ export default function MoviesPage() {
         toast.error('The same query! Please try a different one!');
         return prev;
       }
-      return { page, query: newQuery };
+      return { page: 1, query: newQuery };
     });
   }
 
