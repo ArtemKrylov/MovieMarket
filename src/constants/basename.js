@@ -1,1 +1,1 @@
-export const basename = '/goit-react-hw-05-movies';
+export const basename = '/movie_market';
